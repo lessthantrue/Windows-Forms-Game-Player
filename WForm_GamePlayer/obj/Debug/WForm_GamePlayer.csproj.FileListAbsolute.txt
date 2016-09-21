@@ -1,0 +1,9 @@
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer\bin\Debug\WForm_GamePlayer.dll
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer\bin\Debug\WForm_GamePlayer.pdb
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Debug\WForm_GamePlayer.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer\bin\Debug\MyIO.dll
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer\bin\Debug\MyIO.pdb
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\_DLLs\FormGamePlayer_v2.dll
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\_DLLs\FormGamePlayer_v2.pdb
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Debug\FormGamePlayer_v2.dll
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Debug\FormGamePlayer_v2.pdb

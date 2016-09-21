@@ -1,0 +1,14 @@
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WinFormsGamePlayerTemplate\WinFormsGamePlayerTemplate\bin\Debug\WinFormsGamePlayerTemplate.exe.config
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WinFormsGamePlayerTemplate\WinFormsGamePlayerTemplate\bin\Debug\WinFormsGamePlayerTemplate.exe
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WinFormsGamePlayerTemplate\WinFormsGamePlayerTemplate\bin\Debug\WinFormsGamePlayerTemplate.pdb
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WinFormsGamePlayerTemplate\WinFormsGamePlayerTemplate\obj\Debug\WinFormsGamePlayerTemplate.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WinFormsGamePlayerTemplate\WinFormsGamePlayerTemplate\obj\Debug\WinFormsGamePlayerTemplate.Properties.Resources.resources
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WinFormsGamePlayerTemplate\WinFormsGamePlayerTemplate\obj\Debug\WinFormsGamePlayerTemplate.csproj.GenerateResource.Cache
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WinFormsGamePlayerTemplate\WinFormsGamePlayerTemplate\obj\Debug\WinFormsGamePlayerTemplate.exe
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WinFormsGamePlayerTemplate\WinFormsGamePlayerTemplate\obj\Debug\WinFormsGamePlayerTemplate.pdb
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer_Template\obj\Debug\WinFormsGamePlayerTemplate.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer_Template\obj\Debug\safeprojectname.Main.resources
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer_Template\obj\Debug\WinFormsGamePlayerTemplate.Properties.Resources.resources
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer_Template\obj\Debug\WinFormsGamePlayerTemplate.csproj.GenerateResource.Cache
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer_Template\obj\Debug\WinFormsGamePlayerTemplate.exe
+C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer_Template\obj\Debug\WinFormsGamePlayerTemplate.pdb
