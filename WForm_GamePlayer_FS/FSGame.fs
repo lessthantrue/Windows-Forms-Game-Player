@@ -4,47 +4,54 @@ module gameControl =
     open System.Windows.Forms
     open System.Timers
     open System.Drawing
+    open System.Linq
     open System
     open Draw
 
-    type QuickGame<'a> = 
+    type QGInternal<'a> = 
         {
-        draw: ('a -> Image.Type) Option; 
-        tick: ('a -> 'a) Option; 
-        mouse: ('a -> 'a) Option
-        key: ('a -> 'a) Option
-        initial:'a
+        draw: ('a -> Image.Type); 
+        tick: ('a -> 'a); 
+        mouse: ('a -> 'a);
+        key: ('a -> 'a);
+        initial: 'a
         }
 
-    type GamePlayerControl(width, height, tps, game:QuickGame<'a>) as this = 
-        inherit System.Windows.Forms.Form()
+    type QuickGame<'a>(initial, ?draw, ?tick, ?mouse, ?key) = 
+        member x.contained : QGInternal<'a> = 
+            {
+                draw = defaultArg draw (fun _ -> Image.empty);
+                tick = defaultArg tick id;
+                mouse = defaultArg mouse id;
+                key = defaultArg key id;
+                initial = initial
+            }
+            
+    let startGame<'a> (width:int)(height:int)(tps:int)(game:QuickGame<'a>) = 
+        let form = new System.Windows.Forms.Form()
         let tick = new Timer()
+        let g = game.contained
+        let mutable state = g.initial
+        let mutable closed = false
 
-        let choose (v:'b Option)(e:'b) = 
+        let draw() =
+            if form.InvokeRequired then
+                form.Invoke(new Action(form.Refresh)) |> ignore
+            else form.Refresh()
+
+        let choose v e = 
             match v with
             | Some v' -> v'
             | None -> e
-            
-        let mutable state = game.initial
 
-        let draw() = 
-            if this.InvokeRequired then
-                let act = new Action(this.Refresh)
-                this.Invoke(act) |> ignore
-            else this.Refresh()
-                
-        do 
-            this.Size <- new Size(width, height)
-            tick.Elapsed.Add (fun _ -> (state <- (choose game.tick id) state) |> draw)
-            this.Paint.Add (fun e -> Image.draw e.Graphics ((choose game.draw (fun _ -> Image.empty)) state))
-            
-            this.ClientSize <- new System.Drawing.Size(width, height)
-            tick.AutoReset <- true
-            this.Show()
-            tick.Start()
-            
-        member this.TicksPerSecond 
-            with get() = int (1.0 / tick.Interval / 1000.0)
-            and set(value:int) = tick.Interval <- 1000.0 * (1.0 / float value)
-            
-        member this.CurrentGame = game
+        tick.Interval <- (1. / double tps) / 1000.
+        form.Size <- new Size(width, height)
+        tick.Elapsed.Add (fun _ -> (state <- g.tick state) |> draw)
+        form.Paint.Add (fun e -> Image.draw e.Graphics (g.draw state))
+        form.ClientSize <- new Size(width, height)
+        tick.AutoReset <- true
+        form.Show()
+        tick.Start()
+        form.Closed.Add (ignore >> tick.Stop >> tick.Dispose)
+
+        tick.Elapsed |> Observable.map (fun _ -> state)
