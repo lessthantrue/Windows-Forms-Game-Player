@@ -53,7 +53,6 @@
     <Compile Include="FSGame.fs" />
     <None Include="Script.fsx" />
     <None Include="Test.fsx" />
-    <Compile Include="Library1.fsi" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WForm_GamePlayer\WForm_GamePlayer.csproj">
