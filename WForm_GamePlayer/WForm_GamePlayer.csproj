@@ -50,7 +50,7 @@
     <Compile Include="GamePlayerControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Game.cs" />
+    <Compile Include="Scene.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

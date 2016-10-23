@@ -18,7 +18,9 @@ namespace $safeprojectname$
         {
             InitializeComponent();
 
-            m_gameControl.Init(30, new Game1(m_gameControl));
+            Scenes.initScenes(this.m_gameControl);
+
+            m_gameControl.Init(30, Scenes.scene1);
             m_gameControl.Play();
         }
     }

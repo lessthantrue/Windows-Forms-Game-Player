@@ -55,7 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Game1.cs" />
+    <Compile Include="Scenes.cs" />
+    <None Include="Scene1.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

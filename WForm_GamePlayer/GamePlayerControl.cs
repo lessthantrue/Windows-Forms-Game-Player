@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Timers;
-using System.Windows.Forms;
 
 namespace System.Windows.Forms.GamePlayer
 {
@@ -8,7 +7,8 @@ namespace System.Windows.Forms.GamePlayer
     {
         private readonly object m_locker = new object();
 
-        protected Timers.Timer Tick;
+        private Timers.Timer Tick;
+        private DateTime framerateMeasurement;
 
         /// <summary>
         /// How many ticks per second the game will run
@@ -22,7 +22,7 @@ namespace System.Windows.Forms.GamePlayer
         /// <summary>
         /// The current game being played.
         /// </summary>
-        public Game CurrentGame { get; set; }
+        public Scene CurrentGame { get; set; }
 
         /// <summary>
         /// Instantiates the Timer and makes the control selectable
@@ -38,7 +38,7 @@ namespace System.Windows.Forms.GamePlayer
         /// </summary>
         /// <param name="tps">Ticks per second</param>
         /// <param name="game">The game to be played</param>
-        public void Init(int tps, Game game)
+        public void Init(int tps, Scene game)
         {
             Console.WriteLine("Initializing: " + CurrentGame);
             CurrentGame = game;
@@ -46,6 +46,7 @@ namespace System.Windows.Forms.GamePlayer
             Tick = new Timers.Timer();
             TicksPerSecond = tps;
             Tick.Elapsed += tHandler;
+            framerateMeasurement = DateTime.Now;
             this.Focus();
         }
 
@@ -53,9 +54,14 @@ namespace System.Windows.Forms.GamePlayer
         {
             lock (m_locker)
             {
-                    //Console.WriteLine("Ticking: " + game);
-                    CurrentGame?.Tick();
-                    Draw();
+                //Console.WriteLine("Ticking: " + game);
+                CurrentGame?.setActualDt((DateTime.Now - framerateMeasurement).TotalSeconds);
+                framerateMeasurement = DateTime.Now;
+                CurrentGame?.Tick();
+                Draw();
+
+                if (CurrentGame?.nextScene != null)
+                    CurrentGame = CurrentGame.nextScene;
             }
         }
 
