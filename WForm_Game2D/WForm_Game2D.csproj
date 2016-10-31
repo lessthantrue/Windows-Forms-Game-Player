@@ -45,9 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PhysicsBody.cs" />
     <Compile Include="PhysicsDrawingExtensions.cs" />
     <Compile Include="Conversions.cs" />
-    <Compile Include="PhysicsExtensions.cs" />
+    <Compile Include="Game2DExtensions.cs" />
+    <Compile Include="PhysicsScene.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

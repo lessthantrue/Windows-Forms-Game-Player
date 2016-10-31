@@ -1,0 +1,28 @@
+Things necessary for Farseer Physics bridge to WinForms GamePlayer
+
+/	Implemented
+x	Never Implemented
+-	Not Started
+*	In progress
+
+Framework
+	/ Basic Scenes? (Can be applied to just GamePlayer instead. might do that)
+		/ Scenes static class, Example: Game.ActiveScene = Scenes.Menu;
+	/ A collection of different implementations of Game gathered together that can be switched
+
+Drawing
+	/ capability to draw physics bodies
+		/ Default options
+		/ Capability for custom drawing
+			/ Transformed and not transformed?
+	x Not drawing what is outside of view
+	/ Scale
+
+World (Reference SpaceIO for this)
+	/ Physics world incorporated with GameControl (scene?)
+		/ Ticking properly
+	/ Different scale because max units/s is 2 for some god forsaken reason.
+
+Bodies
+	/ Both particle(?) and physics body implementation
+	/ Easy way to add bodies into a scene/world
