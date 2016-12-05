@@ -5,3 +5,6 @@ C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\_DLLs\WForm_Ga
 C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\_DLLs\WForm_GamePlayer_FS.XML
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer_FS\obj\Release\WForm_GamePlayer_FS.dll
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer_FS\obj\Release\WForm_GamePlayer_FS.pdb
+C:\Users\Nick\Documents\Programming\Projects\_DLLs\WForm_GamePlayer_FS.dll
+C:\Users\Nick\Documents\Programming\Projects\_DLLs\WForm_GamePlayer_FS.pdb
+C:\Users\Nick\Documents\Programming\Projects\_DLLs\WForm_GamePlayer_FS.XML

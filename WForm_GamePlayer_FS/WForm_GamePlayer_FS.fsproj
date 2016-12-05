@@ -29,7 +29,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <Tailcalls>true</Tailcalls>
-    <OutputPath>C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\_DLLs\</OutputPath>
+    <OutputPath>C:\Users\Nick\Documents\Programming\Projects\_DLLs\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>5</WarningLevel>
     <DocumentationFile>bin\Release\WForm_GamePlayer_FS.XML</DocumentationFile>
@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="FSGame.fsi" />
     <Compile Include="FSGame.fs" />
     <None Include="Script.fsx" />
     <None Include="Test.fsx" />

@@ -36,11 +36,8 @@
     </NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FormGamePlayer_v2">
-      <HintPath>..\..\_DLLs\FormGamePlayer_v2.dll</HintPath>
-    </Reference>
-    <Reference Include="MyIO">
-      <HintPath>..\..\_DLLs\MyIO.dll</HintPath>
+    <Reference Include="MyIO_v2">
+      <HintPath>..\..\_DLLs\MyIO_v2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,14 +53,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Scenes.cs" />
-    <None Include="Scene1.cs" />
+    <Compile Include="Scene1.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <None Include="Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -90,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WForm_GamePlayer\WForm_GamePlayer.csproj">
+      <Project>{d7ae056f-dac3-4661-84fe-805c47457bec}</Project>
+      <Name>WForm_GamePlayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

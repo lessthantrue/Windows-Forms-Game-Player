@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WForm_GamePlayer;
 using System.Drawing;
 using System.Windows.Forms.GamePlayer;
 using CustomInput;
 
 namespace $safeprojectname$
 {
-    class Game1 : Game
+    public class Scene1 : System.Windows.Forms.GamePlayer.Scene
     {
-        public Game1(GamePlayerControl controller) : base(controller)
+        public Scene1(GamePlayerControl controller) : base(controller)
         {
             
         }

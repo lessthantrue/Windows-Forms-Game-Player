@@ -12,3 +12,5 @@ C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\b
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Release\WForm_GamePlayer.csprojResolveAssemblyReference.cache
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Release\FormGamePlayer_v2.dll
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Release\FormGamePlayer_v2.pdb
+C:\Users\Nick\Documents\Programming\Projects\_DLLs\FormGamePlayer_v2.dll
+C:\Users\Nick\Documents\Programming\Projects\_DLLs\FormGamePlayer_v2.pdb

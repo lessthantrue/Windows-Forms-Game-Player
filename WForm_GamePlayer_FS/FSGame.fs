@@ -8,22 +8,25 @@ module gameControl =
     open System
     open Draw
 
+    [<NoComparison>]
+    [<NoEquality>]
     type QGInternal<'a> = 
         {
         draw: ('a -> Image.Type); 
         tick: ('a -> 'a); 
-        mouse: ('a -> 'a);
-        key: ('a -> 'a);
+        mouse: (System.Windows.Forms.MouseEventArgs -> 'a -> 'a);
+        key: (System.Windows.Forms.KeyEventArgs -> 'a -> 'a);
         initial: 'a
         }
 
+    [<Sealed>]
     type QuickGame<'a>(initial, ?draw, ?tick, ?mouse, ?key) = 
         member x.contained : QGInternal<'a> = 
             {
                 draw = defaultArg draw (fun _ -> Image.empty);
                 tick = defaultArg tick id;
-                mouse = defaultArg mouse id;
-                key = defaultArg key id;
+                mouse = defaultArg mouse (fun _ -> id);
+                key = defaultArg key (fun _ -> id);
                 initial = initial
             }
             
@@ -39,19 +42,18 @@ module gameControl =
                 form.Invoke(new Action(form.Refresh)) |> ignore
             else form.Refresh()
 
-        let choose v e = 
-            match v with
-            | Some v' -> v'
-            | None -> e
-
         tick.Interval <- (1. / double tps) / 1000.
-        form.Size <- new Size(width, height)
-        tick.Elapsed.Add (fun _ -> (state <- g.tick state) |> draw)
-        form.Paint.Add (fun e -> Image.draw e.Graphics (g.draw state))
+        form.Size <- new Size(width, height)    
         form.ClientSize <- new Size(width, height)
         tick.AutoReset <- true
+        
+        tick.Elapsed.Add (fun _ -> (state <- g.tick state) |> draw)    
+        form.Paint.Add (fun e -> Image.draw e.Graphics (g.draw state))
+        form.Closed.Add (ignore >> tick.Stop >> tick.Dispose)
+        form.KeyDown.Add (fun w -> (state <- g.key w state))
+        (Observable.merge form.MouseClick form.MouseMove) |> Observable.add(fun m -> (state <- g.mouse m state))
+
         form.Show()
         tick.Start()
-        form.Closed.Add (ignore >> tick.Stop >> tick.Dispose)
 
         tick.Elapsed |> Observable.map (fun _ -> state)
