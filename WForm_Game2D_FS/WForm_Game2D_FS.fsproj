@@ -5,15 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>2d88f1fa-144a-49c2-91db-5bce09695bbf</ProjectGuid>
+    <ProjectGuid>370aab89-c5e5-4df7-a02b-ee96fb5510df</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>WForm_GamePlayer_FS</RootNamespace>
-    <AssemblyName>WForm_GamePlayer_FS</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>WForm_Game2D_FS</RootNamespace>
+    <AssemblyName>WForm_Game2D_FS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>WForm_GamePlayer_FS</Name>
-    <TargetFrameworkProfile />
+    <Name>WForm_Game2D_FS</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,46 +22,30 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\WForm_GamePlayer_FS.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\WForm_Game2D_FS.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <Tailcalls>true</Tailcalls>
-    <OutputPath>C:\Users\Nick\Documents\Programming\Projects\_DLLs\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <WarningLevel>5</WarningLevel>
-    <DocumentationFile>bin\Release\WForm_GamePlayer_FS.XML</DocumentationFile>
-    <OtherFlags>
-    </OtherFlags>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Release\WForm_Game2D_FS.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DrawLib">
-      <HintPath>..\..\_DLLs\DrawLib.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="FSGame.fsi" />
-    <Compile Include="FSGame.fs" />
+    <Compile Include="Library1.fs" />
     <None Include="Script.fsx" />
-    <None Include="Test.fsx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WForm_GamePlayer\WForm_GamePlayer.csproj">
-      <Name>WForm_GamePlayer</Name>
-      <Project>{d7ae056f-dac3-4661-84fe-805c47457bec}</Project>
-      <Private>True</Private>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

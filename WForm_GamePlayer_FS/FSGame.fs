@@ -19,8 +19,7 @@ module gameControl =
         initial: 'a
         }
 
-    [<Sealed>]
-    type QuickGame<'a>(initial, ?draw, ?tick, ?mouse, ?key) = 
+    type public QuickGame<'a>(initial, ?draw, ?tick, ?mouse, ?key) = 
         member x.contained : QGInternal<'a> = 
             {
                 draw = defaultArg draw (fun _ -> Image.empty);
@@ -30,8 +29,14 @@ module gameControl =
                 initial = initial
             }
             
-    let startGame<'a> (width:int)(height:int)(tps:int)(game:QuickGame<'a>) = 
-        let form = new System.Windows.Forms.Form()
+    type BufferedForm() =
+        inherit System.Windows.Forms.Form ()
+        do
+        base.DoubleBuffered <- true
+
+    let startGame<'a> (width:int)(height:int)(tps:int)(game:QuickGame<'a>) =
+    
+        let form = new BufferedForm()
         let tick = new Timer()
         let g = game.contained
         let mutable state = g.initial
@@ -39,21 +44,22 @@ module gameControl =
 
         let draw() =
             if form.InvokeRequired then
-                form.Invoke(new Action(form.Refresh)) |> ignore
+                form.Invoke(Action form.Refresh) |> ignore
             else form.Refresh()
 
-        tick.Interval <- (1. / double tps) / 1000.
-        form.Size <- new Size(width, height)    
+        tick.Interval <- float ((1.f / single tps) * 1000.f)
+        //form.Size <- new Size(width, height)    
         form.ClientSize <- new Size(width, height)
         tick.AutoReset <- true
         
         tick.Elapsed.Add (fun _ -> (state <- g.tick state) |> draw)    
         form.Paint.Add (fun e -> Image.draw e.Graphics (g.draw state))
         form.Closed.Add (ignore >> tick.Stop >> tick.Dispose)
-        form.KeyDown.Add (fun w -> (state <- g.key w state))
-        (Observable.merge form.MouseClick form.MouseMove) |> Observable.add(fun m -> (state <- g.mouse m state))
-
-        form.Show()
+        form.KeyDown.Add (fun w -> (state <- g.key w state) |> draw)
+        (Observable.merge form.MouseClick form.MouseMove) |> Observable.add(fun m -> (state <- g.mouse m state) |> draw)
+          
         tick.Start()
 
-        tick.Elapsed |> Observable.map (fun _ -> state)
+        Application.Run(form)
+        
+        tick.Disposed |> Observable.map (fun _ -> state)

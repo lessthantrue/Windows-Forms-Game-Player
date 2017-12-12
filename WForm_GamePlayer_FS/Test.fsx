@@ -1,4 +1,4 @@
-﻿#load "Script.fsx"
+﻿#load "C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer_FS\Script.fsx"
 
 open System.Windows.Forms.GamePlayerFS
 open System.Windows.Forms
@@ -15,7 +15,7 @@ type keyState = {loc : Point; vel : Size}
 
 type gameState = {key : keyState; mouse:mouseState}
 
-let state_init = {key = {loc = new Point(250, 250); vel = new Size(250, 250)}; mouse = {loc = new Point(250, 250); state = Brushes.Red}}
+let state_init = {key = {loc = new Point(250, 250); vel = new Size(0, 0)}; mouse = {loc = new Point(250, 250); state = Brushes.Red}}
 
 let tick (state:gameState) : gameState = 
     {state with key = {state.key with loc = state.key.loc + state.key.vel}}
