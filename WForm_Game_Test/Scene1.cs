@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-using System.Windows.Forms.GamePlayer;
-using CustomInput;
+﻿using System.Drawing;
+using FormsGamePlayer;
+using System.Windows.Forms;
 
 namespace WForm_Game_Test
 {
@@ -14,28 +9,46 @@ namespace WForm_Game_Test
         int i;
         readonly Point center;
 
-        Point clicked;
-
-        Color keyboard;
+        Point clickedPoint;
+        Color keyboardState;
 
         public Scene1(GamePlayerControl controller) : base(controller)
         {
             i = 0;
-            center = new Point(base.GameData.PictureBoxWidth / 2, base.GameData.PictureBoxHeight / 2);
+            center = new Point(GameData.PictureBoxWidth / 2, GameData.PictureBoxHeight / 2);
 
-            base.MouseControl.AddPulseEvent(System.Windows.Forms.MouseButtons.Left, (o, a) => clicked = new Point(MouseControl.X, MouseControl.Y));
+            controller.MouseClick += (o, e) =>
+            {
+                clickedPoint = new Point(e.X, e.Y);
+            };
 
-            KeyboardControl.AddPulseEvent(System.Windows.Forms.Keys.Up, (o, a) => keyboard = Color.Blue);
-            KeyboardControl.AddPulseEvent(System.Windows.Forms.Keys.Down, (o, a) => keyboard = Color.Red);
-            KeyboardControl.AddPulseEvent(System.Windows.Forms.Keys.Left, (o, a) => keyboard = Color.Green);
-            KeyboardControl.AddPulseEvent(System.Windows.Forms.Keys.Right, (o, a) => keyboard = Color.Yellow);
+            controller.KeyDown += (o, e) =>
+            {
+                switch (e.KeyData)
+                {
+                    case Keys.Up:
+                        keyboardState = Color.Red;
+                        break;
+                    case Keys.Down:
+                        keyboardState = Color.Blue;
+                        break;
+                    case Keys.Left:
+                        keyboardState = Color.Green;
+                        break;
+                    case Keys.Right:
+                        keyboardState = Color.Yellow;
+                        break;
+                    default:
+                        break;
+                }
+            };
         }
 
         public override void Draw(Graphics g)
         {
             g.DrawString(i.ToString(), SystemFonts.DefaultFont, Brushes.Black, center);
-            g.DrawString("CLICK!", SystemFonts.DefaultFont, Brushes.Brown, clicked);
-            g.FillRectangle(new SolidBrush(keyboard), 0, 0, 100, 100);
+            g.DrawString("CLICK!", SystemFonts.DefaultFont, Brushes.Brown, clickedPoint);
+            g.FillRectangle(new SolidBrush(keyboardState), 0, 0, 100, 100);
         }
 
         public override void Tick()

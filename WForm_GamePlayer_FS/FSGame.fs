@@ -12,11 +12,11 @@ module gameControl =
     [<NoEquality>]
     type QGInternal<'a> = 
         {
-        draw: ('a -> Image.Type); 
-        tick: ('a -> 'a); 
-        mouse: (System.Windows.Forms.MouseEventArgs -> 'a -> 'a);
-        key: (System.Windows.Forms.KeyEventArgs -> 'a -> 'a);
-        initial: 'a
+            draw: ('a -> Image.Type); 
+            tick: ('a -> 'a); 
+            mouse: (System.Windows.Forms.MouseEventArgs -> 'a -> 'a);
+            key: (System.Windows.Forms.KeyEventArgs -> 'a -> 'a);
+            initial: 'a
         }
 
     type public QuickGame<'a>(initial, ?draw, ?tick, ?mouse, ?key) = 

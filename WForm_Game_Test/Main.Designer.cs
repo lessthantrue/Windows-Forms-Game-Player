@@ -1,4 +1,4 @@
-﻿using System.Windows.Forms.GamePlayer;
+﻿using FormsGamePlayer;
 namespace WForm_Game_Test
 {
     partial class Main

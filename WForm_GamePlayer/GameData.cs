@@ -1,4 +1,4 @@
-﻿namespace System.Windows.Forms.GamePlayer
+﻿namespace FormsGamePlayer
 {
     /// <summary>
     /// Contains various information about the game

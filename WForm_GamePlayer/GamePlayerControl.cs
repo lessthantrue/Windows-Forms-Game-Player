@@ -1,24 +1,20 @@
 ﻿using System;
 using System.Timers;
+using System.Windows.Forms;
 
-namespace System.Windows.Forms.GamePlayer
+namespace FormsGamePlayer
 {
     public class GamePlayerControl : PictureBox
     {
         private readonly object m_locker = new object();
 
-        private Timers.Timer Tick;
+        private System.Timers.Timer Tick;
         private DateTime framerateMeasurement;
 
         /// <summary>
         /// How many ticks per second the game will run
         /// </summary>
-        public int TicksPerSecond
-        {
-            get { return (int)(1.0 / (Tick.Interval / 1000.0)); }
-            set { Tick.Interval = 1000 * (1.0 / value); }
-        }
-
+        public int TicksPerSecond;
         /// <summary>
         /// The current game being played.
         /// </summary>
@@ -30,7 +26,6 @@ namespace System.Windows.Forms.GamePlayer
         public GamePlayerControl() : base()
         {
             SetStyle(ControlStyles.Selectable, true);
-            Tick = new Timers.Timer();
         }
 
         /// <summary>
@@ -43,18 +38,17 @@ namespace System.Windows.Forms.GamePlayer
             Console.WriteLine("Initializing: " + CurrentGame);
             CurrentGame = game;
             Paint += (sender, e) => { CurrentGame?.Draw(e.Graphics); };
-            Tick = new Timers.Timer();
+            Tick = new System.Timers.Timer();
             TicksPerSecond = tps;
-            Tick.Elapsed += tHandler;
+            Tick.Elapsed += TickHandler;
             framerateMeasurement = DateTime.Now;
             this.Focus();
         }
 
-        private void tHandler(object sender, ElapsedEventArgs e)
+        private void TickHandler(object sender, ElapsedEventArgs e)
         {
             lock (m_locker)
             {
-                //Console.WriteLine("Ticking: " + game);
                 CurrentGame?.setActualDt((DateTime.Now - framerateMeasurement).TotalSeconds);
                 framerateMeasurement = DateTime.Now;
                 CurrentGame?.Tick();
@@ -69,13 +63,11 @@ namespace System.Windows.Forms.GamePlayer
         {
             if (InvokeRequired)
             {
-                //Console.WriteLine("Invoking Refresh: " + game);
                 Action act = Refresh;
                 Invoke(act);
             }
             else
             {
-                //Console.WriteLine("Refreshing: " + game);
                 Refresh();
             }
         }
@@ -85,7 +77,6 @@ namespace System.Windows.Forms.GamePlayer
         /// </summary>
         public void Play()
         {
-            //Console.WriteLine("Playing: " + CurrentGame);
             Tick.Enabled = true;
             Tick.Start();
         }
@@ -95,7 +86,6 @@ namespace System.Windows.Forms.GamePlayer
         /// </summary>
         public void Pause()
         {
-            //Console.WriteLine("Pausing: " + CurrentGame);
             Tick.Stop();
         }
 

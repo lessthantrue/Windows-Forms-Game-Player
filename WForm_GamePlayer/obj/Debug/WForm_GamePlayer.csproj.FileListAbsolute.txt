@@ -7,3 +7,9 @@ C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\_DLLs\FormGame
 C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\_DLLs\FormGamePlayer_v2.pdb
 C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Debug\FormGamePlayer_v2.dll
 C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Debug\FormGamePlayer_v2.pdb
+C:\Users\Nick\Documents\Programming\Projects\_DLLs\FormGamePlayer_v2.dll
+C:\Users\Nick\Documents\Programming\Projects\_DLLs\FormGamePlayer_v2.pdb
+C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Debug\WForm_GamePlayer.csprojAssemblyReference.cache
+C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Debug\WForm_GamePlayer.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Debug\FormGamePlayer_v2.dll
+C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Debug\FormGamePlayer_v2.pdb

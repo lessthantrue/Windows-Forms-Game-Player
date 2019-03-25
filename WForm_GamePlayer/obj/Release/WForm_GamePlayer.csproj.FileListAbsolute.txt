@@ -9,10 +9,10 @@ C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\b
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\bin\Release\FormGamePlayer_v2.pdb
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\bin\Release\MyIO_v2.dll
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\bin\Release\MyIO_v2.pdb
-C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Release\WForm_GamePlayer.csprojResolveAssemblyReference.cache
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Release\FormGamePlayer_v2.dll
 C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Release\FormGamePlayer_v2.pdb
 C:\Users\Nick\Documents\Programming\Projects\_DLLs\FormGamePlayer_v2.dll
 C:\Users\Nick\Documents\Programming\Projects\_DLLs\FormGamePlayer_v2.pdb
 C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\_DLLs\FormGamePlayer_v2.dll
 C:\Users\Nick\Documents\Visual Studio 2013\Visual-Studio-Projects\_DLLs\FormGamePlayer_v2.pdb
+C:\Users\Nick\Documents\Programming\Projects\WForm_GamePlayer\WForm_GamePlayer\obj\Release\WForm_GamePlayer.csproj.CoreCompileInputs.cache
